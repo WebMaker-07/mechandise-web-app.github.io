@@ -205,7 +205,7 @@ aside .sidebar a.active:before{
 
 aside .sidebar a.active i{
     color: var(--color-primary);
-    margin-left: calc(1rem -3px);
+    margin-left: 2rem;
 }
 
 aside .sidebar a:hover {
