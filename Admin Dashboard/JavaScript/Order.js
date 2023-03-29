@@ -26,7 +26,4 @@ const orders = [{
     status: 'Paid',
     balance: '0'
 }
-
-
-
 ]
