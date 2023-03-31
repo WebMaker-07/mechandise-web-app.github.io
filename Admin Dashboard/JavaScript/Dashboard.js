@@ -39,7 +39,7 @@ orders.forEach(Order => {
                         : 'primary'}">${Order.status}</td>
                         <td class="primary">Details</td>
                         `;
-                        console.log(orders)
+                        console.log(Order.costumerName)
 
     tr.innerHTML = trContent;
     document.querySelector('table tbody').appendChild(tr);
