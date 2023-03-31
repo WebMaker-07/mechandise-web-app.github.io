@@ -40,22 +40,27 @@
                         <a href="#" class="nav-item nav-link text-white">Logout</a>
                     </div>
                 </div>
-                <div class="col-12 mt-3 ">
-                    <div class="row">
-                        <nav class="nav mx-4 flex-column shadow shadow-primary col-3 p-0 py-2 rounded bg-light">
-                            <a href="#" class="nav-item nav-link"><i class="bi bi-bag-check"></i>Pending</a>
-                            <a href="#" class="nav-item nav-link"><i class="bi bi-bag-check"></i>Completed</a>
-                            <a href="#" class="nav-item nav-link"><i class="bi bi-bag-check"></i>Cancelled</a>
-                        </nav>
-                        <div class="col ms-auto mx-4 p-0 rounded bg-light">
-                            <h6 class="p-2">Pending</h6>
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="/media/supplies.jpg" width="20%" alt="supplies">
-                                    <h5 class="card-title">School Supplies</h5>
-                                </div>
-                            </div>
+                <div class="col-12 p-0 mt-3">
+                    <div class="col-11 row mx-4 rounded bg-light">
+                        <div class="col-3">
+                            <nav class="nav flex-column col-12 ">
+                                <a href="#" class="nav-item nav-link"><i class="bi bi-bag-plus"></i> Pending</a>
+                                <a href="#" class="nav-item nav-link"><i class="bi bi-bag-check"></i> Completed</a>
+                                <a href="#" class="nav-item nav-link"><i class="bi bi-bag-x"></i> Cancelled</a>
+                            </nav>
                         </div>
+                        <section class="col-9 pending p-2 ms-auto">
+                            <h6>Pending</h6>
+                            <p>For month of : </p>
+                        </section>
+                        <section class="col-9 completed p-2 ms-auto">
+                            <h6>Completed</h6>
+                            <p>For month of : </p>
+                        </section>
+                        <section class="col-9 cancelled p-2 ms-auto">
+                            <h6>Canceled</h6>
+                            <p>For month of : </p>
+                        </section>
                     </div>
                 </div>
             </div>
