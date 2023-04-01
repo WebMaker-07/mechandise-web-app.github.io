@@ -71,7 +71,7 @@ form.addEventListener('submit', (e) => {
   if (orderInput.value === "") {
     isValid = false;
     document.getElementById("order-validate").textContent =
-      "Please select a Order method.";
+      "Please select an order method.";
   } else {
     document.getElementById("order-validate").textContent = "";
   }
@@ -79,7 +79,7 @@ form.addEventListener('submit', (e) => {
   if (loanInput.value === "") {
     isValid = false;
     document.getElementById("loan-validate").textContent =
-      "Please select a Loan method.";
+      "Please select a loan method.";
   } else {
     document.getElementById("loan-validate").textContent = "";
   }
@@ -92,11 +92,13 @@ form.addEventListener('submit', (e) => {
     document.getElementById("balance-validate").textContent = "";
   }
 
+  
+
   if (isValid) {
-    // Submit the form
     form.submit();
   }
 });
+
 
 
 
@@ -127,7 +129,6 @@ form.addEventListener('submit', (e) => {
 
 
 
-// Get form input elements
 const nameInput = document.getElementById("name");
 const numberInput = document.getElementById("number");
 const addressInput = document.getElementById("address");
@@ -146,6 +147,24 @@ numberInput.addEventListener('input', () => {
       numberInput.value = "09";
     }
 });
+nameInput.addEventListener('input', () => {
+  const words = nameInput.value.split(' ');
+  for (let i = 0; i < words.length; i++) {
+    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+  }
+  nameInput.value = words.join(' ');
+
+  if (nameInput.value !== "") {
+    document.getElementById("name-validate").textContent = "";
+  }
+});
+
+numberInput.addEventListener('input', () => {
+  if (numberInput.value !== "") {
+    document.getElementById("number-validate").textContent = "";
+  }
+});
+
 // auto capital every word
 addressInput.addEventListener('input', () => {
   const words = addressInput.value.split(' ');
@@ -153,29 +172,41 @@ addressInput.addEventListener('input', () => {
     words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
   }
   addressInput.value = words.join(' ');
-});
 
-nameInput.addEventListener('input', () => {
-  const words = nameInput.value.split(' ');
-  for (let i = 0; i < words.length; i++) {
-    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+  if (addressInput.value !== "") {
+    document.getElementById("address-validate").textContent = "";
   }
-  nameInput.value = words.join(' ');
 });
 
+paymentInput.addEventListener('input', () => {
+  if (paymentInput.value !== "") {
+    document.getElementById("payment-validate").textContent = "";
+  }
+});
 
-// Add event listener to balance input to format value
-balanceInput.addEventListener('input', () => {
-  // Get input value and remove non-numeric characters
+orderInput.addEventListener('input', () => {
+  if (orderInput.value !== "") {
+    document.getElementById("order-validate").textContent = "";
+  }
+});
+
+loanInput.addEventListener('input', () => {
+  if (loanInput.value !== "") {
+    document.getElementById("loan-validate").textContent = "";
+  }
+});
+
+  balanceInput.addEventListener('input', () => {
   let inputValue = balanceInput.value.replace(/[^0-9]/g, '');
-  
-  // Format value with commas for thousands separators
   if (inputValue.length > 0) {
     inputValue = parseInt(inputValue).toLocaleString();
   }
-  
-  // Set input value
   balanceInput.value = inputValue;
+
+  if (balanceInput.value !== "") {
+    document.getElementById("balance-validate").textContent = "";
+  }
+  
 });
 
 const table = document.querySelector(".table");
@@ -277,6 +308,50 @@ window.addEventListener("load", () => {
         }
       }
     });
+
+
+    // =====================================================EDIT BUTTON================================================================
+    const editButton = document.getElementById("edit");
+    editButton.addEventListener("click", () => {
+      const checkedRows = tableBody.querySelectorAll("tr input[type='checkbox']:checked");
+      if (checkedRows.length !== 1) {
+        alert("Please select one row to edit");
+        return;
+      }
+      const row = checkedRows[0].parentNode.parentNode;
+      const cells = row.cells;
+      nameInput.value = cells[2].textContent;
+      numberInput.value = cells[3].textContent;
+      addressInput.value = cells[4].textContent;
+      paymentInput.value = cells[5].textContent;
+      orderInput.value = cells[6].textContent;
+      loanInput.value = cells[7].textContent;
+      balanceInput.value = cells[8].textContent;
+      editButton.textContent = "Apply";
+      editButton.removeEventListener("click", editButtonClickHandler);
+      editButton.addEventListener("click", applyButtonClickHandler);
+    });
+    
+    function applyButtonClickHandler() {
+      const checkedRows = tableBody.querySelectorAll("tr input[type='checkbox']:checked");
+      if (checkedRows.length !== 1) {
+        alert("Please select one row to edit");
+        return;
+      }
+      const row = checkedRows[0].parentNode.parentNode;
+      const cells = row.cells;
+      cells[2].textContent = nameInput.value;
+      cells[3].textContent = numberInput.value;
+      cells[4].textContent = addressInput.value;
+      cells[5].textContent = paymentInput.value;
+      cells[6].textContent = orderInput.value;
+      cells[7].textContent = loanInput.value;
+      cells[8].textContent = balanceInput.value;
+      editButton.textContent = "Edit";
+      editButton.removeEventListener("click", applyButtonClickHandler);
+      editButton.addEventListener("click", editButtonClickHandler);
+    }
+    
     
     const clearButton = document.getElementById("clear");
     clearButton.addEventListener("click", () => {
