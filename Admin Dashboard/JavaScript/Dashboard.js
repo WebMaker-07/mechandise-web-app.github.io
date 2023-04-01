@@ -22,7 +22,7 @@ themeToggler.addEventListener('click', () =>{
 
     themeToggler.querySelector('i:nth-child(1)').classList.toggle('active')
     themeToggler.querySelector('i:nth-child(2)').classList.toggle('active')
-
+    
 })
 
 // ======================= ORDER IN TABLE==================
