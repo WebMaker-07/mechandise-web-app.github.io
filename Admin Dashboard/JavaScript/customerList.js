@@ -106,7 +106,7 @@ form.addEventListener('submit', (e) => {
   const tableRow = document.createElement('tr');
   const tableData = [
     '',
-    'PMP001',
+    'PMP000',
     document.querySelector('#name').value,
     document.querySelector('#number').value,
     document.querySelector('#address').value,
@@ -122,12 +122,6 @@ form.addEventListener('submit', (e) => {
   });
   formTable.querySelector('tbody').appendChild(tableRow);
   form.reset();
-
-
-
-
-
-
 
 const nameInput = document.getElementById("name");
 const numberInput = document.getElementById("number");
