@@ -32,6 +32,8 @@
     --color-light: rgba(0, 0, 0, 0.4);
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
+
+
 @media screen and (max-width:1200px) {
     .container{
         width: 94%;

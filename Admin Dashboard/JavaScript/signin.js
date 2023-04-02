@@ -6,6 +6,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
   
     for (const data of formData) {
       if ((data.email === usernameOrEmail || data.username === usernameOrEmail) && data.password === password) {
+        localStorage.setItem('signinData', JSON.stringify(data));
         window.location.href = 'dashboard.html'; 
         return;
       }

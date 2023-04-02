@@ -99,6 +99,7 @@ function saveFormData() {
   const message = `Thank you ${usernameInput.value}! Your account has been successfully created. Click OK to sign in.`;
   alert(message);
   window.location.href = "signin.html";
+  return;
 }
 
 form.addEventListener('submit', (e) => {
