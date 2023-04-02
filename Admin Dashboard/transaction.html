@@ -73,8 +73,9 @@
 </aside>
             <!-- ==============================END OF ASIDE============================= -->
     <main>
-
-        <form>
+        <h1>Transaction</h1>
+    <div class="formcontainer">
+        <form id="form">
             <label for="transaction-id">Transaction ID:</label>
             <input type="text" id="transaction-id" name="transaction-id"><br><br>
             
@@ -114,15 +115,17 @@
               <option value="processed">Processed</option>
               <option value="not-processed">Not Processed</option>
             </select><br><br>
-            
-            <input type="submit" value="Submit">
+            <input type="submit" value="Edit" name="Edit">
+            <input type="submit" value="Submit" name="Submit">
+            <input type="submit" value="Delete" name="Delete" id="delete">
           </form>
           
-
-
+        </div>
+        <div class="table_container">
         <table>
             <thead>
               <tr>
+                <th><button type="button">clearall</button></th>
                 <th>Transaction ID</th>
                 <th>Customer Details</th>
                 <th>Transaction Type</th>
@@ -133,28 +136,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1234</td>
-                <td>John Doe<br>john.doe@example.com<br>(123) 456-7890</td>
-                <td>Product Purchase</td>
-                <td>Widget A<br>$10.00<br>2 units</td>
-                <td>2023-04-01</td>
-                <td>$20.00</td>
-                <td>Processed</td>
-              </tr>
-              <tr>
-                <td>5678</td>
-                <td>Jane Smith<br>jane.smith@example.com<br>(987) 654-3210</td>
-                <td>Bill Payment</td>
-                <td>Electricity<br>$50.00<br>1 month</td>
-                <td>2023-03-28</td>
-                <td>$50.00</td>
-                <td>Not Processed</td>
-              </tr>
+              
             </tbody>
           </table>
     </main>
-          
     </div>
+    </div>
+
+    <script src="JavaScript/transaction.js"></script>
 </body>
 </html>
