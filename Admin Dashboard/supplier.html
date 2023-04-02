@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/supplier.css">
+    <title>Supplier</title>
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="images/logo.gif" alt="">
+                    <h2>ADMIN</h2>
+                    
+                </div>
+                <div class="close" id="close-btn">
+                    <i class="bi bi-x"></i>
+                </div>
+            </div>
+
+            <!-- =================================SIDEBAR=============================-->
+            <div class="sidebar">
+                <a href="#">
+                    <i class="bi bi-grid"></i>
+                    <h3>Dashboard</h3>
+                </a>
+
+                <a href="Customer.html" >
+                    <i class="bi bi-person-badge"></i>
+                    <h3>Customer</h3>
+                </a>
+
+                <a href="transaction.html">
+                    <i class="bi bi-bounding-box-circles"></i>
+                    <h3>Transaction</h3>
+                </a>
+
+                <a href="#">
+                    <i class="bi bi-bag-dash"></i>
+                    <h3>Order </h3>
+                    <span class="order-count">156</span>
+                </a>
+
+                <a href="#" class="active">
+                    <i class="bi bi-boxes"></i>
+                    <h3>Supplier</h3>
+                </a>
+
+                <a href="#">
+                    <i class="bi bi-bounding-box-circles"></i>
+                    <h3>Product</h3>
+                </a>
+
+                <a href="#">
+                    <i class="bi bi-people"></i>
+                    <h3>Clients</h3>
+                </a>
+
+                <a href="#">
+                    <i class="bi bi-grid"></i>
+                    <h3>Categories</h3>
+                </a>
+
+                <a href="#">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <h3>Log-Out</h3>
+                </a>
+            </div>
+        </aside>
+                <!-- =======================END ASIDE====================== -->
+        <div class="main">
+            <div class="subMenu">
+                <a href="#" id="btnList" class="active" onclick="list()"><i class="bi bi-people"></i> List of Suppliers</a>
+                <a href="#" id="btnHistory" onclick="history()"><i class="bi bi-clock-history"></i> History of Transactions</a>
+                <a href="#" id="btnProduct" onclick="product()"><i class="bi bi-people"></i> Products</a>
+            </div>
+            <div class="mainContent">
+                <div id="list">
+                        <div >
+                        <h2>Add Supplier</h2>
+                        <form id="add" action="#">
+                            <label for="Supplier">Supplier Name : </label>
+                            <input type="text" name="supplierName" id="supplierName" placeholder="Supplier Name">
+                            <label for="Contact">Contact : </label>
+                            <input type="number" name="contact" id="contact" placeholder="Contact">
+                            <label for="Address">Address : </label>
+                            <input type="text" name="address" id="address" placeholder="Address">
+                            <button type="button">Add List</button>
+                        </form>
+                    </div>
+                    <h2>List of Suppliers</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>SupplierID</th>
+                                <th>SupplierName</th>
+                                <th>Contact</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="history">
+                    <h2>History of Transactions</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>SupplierID</th>
+                                <th>ProductID</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div id="product">
+                    <h2>Products</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ProductID</th>
+                                <th>ProductName</th>
+                                <th>ProductDescription</th>
+                                <th>ProductQuantity</th>
+                                <th>ProductPrice</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JavaScript/supplier.js"></script>
+</body>
+</html>
