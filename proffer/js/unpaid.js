@@ -1,15 +1,23 @@
-const customerData = JSON.parse(localStorage.getItem('customerData'));
 
-console.log(customerData.loan);
+const customerData = JSON.parse(localStorage.getItem("customerData")) || [];
+// const newData = data.filter((item) => item.name === "Proffer");
 
-// let customerName = "Fanner Lhastly";
+// alert(data);
+
+let customerName = "Fanner Lhastly";
 
 if (customerData) {
-//   customerData = customerData.filter(customer => customer.name === customerName ); 
-  customerData.sort((a, b) => (a.name > b.name ? 1 : -1));
+  // const customer = customerData.filter(customer => customer.name === "Proffer" ); 
+// alert(customerData.name[1]);
+  // customerData.sort((a, b) => (a.name > b.name ? 1 : -1));
   customerData.forEach(customer => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
+    // alert(customer.name)
+  
+    if(customer.name === "Proffer" && customer.loan === "Unpaid"){
+      const row = document.createElement('tr');
+      row.innerHTML = `
+
+
       <td>${customer.id}</td>
       <td>${customer.name}</td>
       <td>${customer.balance}</td>
@@ -20,5 +28,9 @@ if (customerData) {
       </td>
     `;
     document.getElementById('customer-data').appendChild(row);
+    }
+    else{
+      document.write("No Data");
+    }
   });
 }
