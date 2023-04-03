@@ -2,7 +2,7 @@ const customerData = JSON.parse(localStorage.getItem('customerData'));
 
 console.log(customerData.loan);
 
-let customerName = "Fanner Lhastly";
+// let customerName = "Fanner Lhastly";
 
 if (customerData) {
 //   customerData = customerData.filter(customer => customer.name === customerName ); 
