@@ -1,3 +1,4 @@
+
 const customerData = JSON.parse(localStorage.getItem("customerData")) || [];
 // const newData = data.filter((item) => item.name === "Proffer");
 
@@ -15,6 +16,8 @@ if (customerData) {
     if(customer.name === "Proffer" && customer.loan === "Unpaid"){
       const row = document.createElement('tr');
       row.innerHTML = `
+
+
       <td>${customer.id}</td>
       <td>${customer.name}</td>
       <td>${customer.balance}</td>
@@ -25,9 +28,12 @@ if (customerData) {
       </td>
     `;
     document.getElementById('customer-data').appendChild(row);
+<<<<<<< HEAD
     }
     else{
       document.write("No Data");
     }
+=======
+>>>>>>> ef83e24e31c9bc4d041f86e45231d70f988dcfec
   });
 }

@@ -364,10 +364,6 @@ aside .sidebar .order-count{
         color: #009879;
     }
 
-    tbody tr:first-child {
-        display: none;
-      }
-
 
     
   .table th,
