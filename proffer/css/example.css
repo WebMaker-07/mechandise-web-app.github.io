@@ -1,0 +1,62 @@
+/* Wrapper for page content and sidebar */
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+  }
+  
+  /* Sidebar styling */
+  #sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    background-color: #1a1a1a;
+    color: #fff;
+    transition: all 0.3s;
+    z-index: 1;
+    position: relative;
+  }
+  
+  /* Header for sidebar */
+  .sidebar-header {
+    padding: 20px;
+    text-align: center;
+    background-color: #1a1a1a;
+  }
+  
+  /* List items in sidebar */
+  .components {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  /* Links in sidebar */
+  .components li a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Active link in sidebar */
+  .components li.active > a {
+    background-color: #ffffff;
+    color: #1a1a1a;
+  }
+  
+  /* Button to toggle sidebar */
+  #sidebarCollapse {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin: 20px;
+    cursor: pointer;
+  }
+  
+  /* Content styling */
+  #content {
+    width: 100%;
+    padding: 20px;
+    transition: all 0.
+  }  
