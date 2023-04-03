@@ -19,7 +19,6 @@ function validateFormInputs() {
   for (let i = 0; i < storedData.length; i++) {
     const data = storedData[i];
 
-    console.log(formData);
 
     if (data.email === emailInput.value) {
       errorElements[2].innerText = 'Email already exists';
@@ -73,7 +72,7 @@ function validateFormInputs() {
     }
 
     if (!passwordRegex.test(passwordValue)) {
-      errorElements[4].innerText = 'Password must contain at least one number and one capital letter, and be at least 8 characters long';
+      errorElements[4].innerText = 'Password must contain one number, Capital, and 8 char.';
       isValid = false;
     } else {
       errorElements[4].innerText = '';
@@ -83,7 +82,7 @@ function validateFormInputs() {
   return isValid;
 }
 
-const storedData = []
+
 function saveFormData() {
   const formData = {
     username: usernameInput.value,
@@ -91,16 +90,18 @@ function saveFormData() {
     email: emailInput.value,
     password: passwordInput.value
   };
+
   const storedData = JSON.parse(localStorage.getItem('formData')) || []; 
-  storedData.push(formData); // push new data to array
+  storedData.push(formData); 
 
   localStorage.setItem('formData', JSON.stringify(storedData)); 
 
-  const message = `Thank you ${usernameInput.value}! Your account has been successfully created. Click OK to sign in.`;
+  const message = `Thank you ${formData.username}! Your account has been successfully created account. Click OK and click the Signin button down.`;
   alert(message);
+
   window.location.href = "signin.html";
-  return;
 }
+
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();

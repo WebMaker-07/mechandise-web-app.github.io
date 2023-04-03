@@ -1,3 +1,6 @@
+const currentDate = new Date().toISOString().split("T")[0];
+document.getElementById("currentDate").value = currentDate;
+
 const sideMenu = document.querySelector("aside");
 const mainBtn = document.querySelector("#menu-btn");
 const closeBtn = document.querySelector("#close-btn");
