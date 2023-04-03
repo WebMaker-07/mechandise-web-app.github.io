@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/CustomerList.css">
-    <title>Customer List</title>
+    <title>Customers</title>
 </head>
 <body>
 
@@ -28,6 +28,7 @@
             </div>
 
 <!-- =================================SIDEBAR=============================-->
+<<<<<<< HEAD
             <div class="sidebar">
                 <a href="Dashboard.html">
                     <i class="bi bi-grid"></i>
@@ -38,99 +39,116 @@
                     <i class="bi bi-person-badge"></i>
                     <h3>Customer</h3>
                 </a>
+=======
+<div class="sidebar">
+    <a href="Dashboard.html" >
+        <i class="bi bi-grid"></i>
+        <h3>Dashboard</h3>
+    </a>
 
-                <a href="#">
-                    <i class="bi bi-bag-dash"></i>
-                    <h3>Order </h3>
-                    <span class="order-count">156</span>
-                </a>
+    <a href="Customer.html" class="active">
+        <i class="bi bi-person-badge"></i>
+        <h3>Customer</h3>
+    </a>
+>>>>>>> 70c5335623ecbf3c33c707c19ecd9c5fbf105e61
 
-                <a href="#">
-                    <i class="bi bi-credit-card-2-back"></i>
-                    <h3>Payment</h3>
-                </a>
+    <a href="transaction.html">
+        <i class="bi bi-bounding-box-circles"></i>
+        <h3>Transaction</h3>
+    </a>
 
-                <a href="#">
-                    <i class="bi bi-bounding-box-circles"></i>
-                    <h3>Transactions</h3>
-                </a>
+    <a href="#">
+        <i class="bi bi-bag-dash"></i>
+        <h3>Order </h3>
+        <span class="order-count">123</span>
+    </a>
 
-                <a href="#">
-                    <i class="bi bi-people"></i>
-                    <h3>Clients</h3>
-                </a>
+    <a href="supplier.html">
+        <i class="bi bi-boxes"></i>
+        <h3>Supplier</h3>
+    </a>
 
-                <a href="#">
-                    <i class="bi bi-grid"></i>
-                    <h3>Categories</h3>
-                </a>
+    <a href="#">
+        <i class="bi bi-bounding-box-circles"></i>
+        <h3>Product</h3>
+    </a>
 
-                <a href="#">
-                    <i class="bi bi-box-arrow-left"></i>
-                    <h3>Log-Out</h3>
-                </a>
-            </div>
-        </aside>
+    <a href="#">
+        <i class="bi bi-people"></i>
+        <h3>Client</h3>
+    </a>
 
+    <a href="#">
+        <i class="bi bi-grid"></i>
+        <h3>Category</h3>
+    </a>
 
-        <!-- ==============================END OF ASIDE============================= -->
+    <a href="#">
+        <i class="bi bi-box-arrow-left"></i>
+        <h3>Log-Out</h3>
+    </a>
+</div>
+</aside>
+            <!-- ==============================END OF ASIDE============================= -->
 
         <main>
+            <h1>Customer</h1>
             <div class="inputForm">
-                <form action="#" method="#">
-                    <label for="cName">Customer Name</label>
-                    <input type="text" name="cName" placeholder="Enter Customer Name" id="name" required="required"/>
-                    <label for="cContact">Customer Contact</label>
-                    <input type="number" name="cContact" placeholder="09123456789" id="number" required="required"/>
-                    <label for="payment">Payment</label>
-                    <select name="payment" required="required" id="payment">
-                        <option value="select" disabled>Payment Method</option>
+                <form action="#" method="#" id="form">
+                    <label for="cName">Customer Name</label><span id="name-validate"></span>
+                    <input type="text" name="cName" placeholder="Enter Customer Name" id="name" />
+                    <label for="cContact">Customer Contact</label><span id="number-validate"></span>
+                    <input type="number" name="cContact" placeholder="09123456789" id="number" />
+                    <label for="cAddress">Address</label><span id="address-validate"></span>
+                    <input type="text" name="cAddress" placeholder="Enter Address" id="address" />
+                    <span id="payment-validate"></span>
+                    <select name="payment"  id="payment">
+                        <option value="" disabled selected>Payment Method</option>
                         <option value="Cash">Cash</option>
                         <option value="Credit">Credit</option>
                     </select>
-                    <label for="balance" >Balance</label>
-                    <input type="number" name="balance" id="balance" placeholder="Enter Amount" required="required"/>
+                    <span id="order-validate"></span>
+                    <select name="order" id="order">
+                        <option value="" disabled selected>Order</option>
+                        <option value="Complete">Complete</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                    <span id="loan-validate"></span>
+                    <select name="loan" id="loan">
+                        <option value="" disabled selected>Loan</option>
+                        <option value="Paid">Paid</option>
+                        <option value="Unpaid">Unpaid</option>    
+                    </select>
+                    <label for="balance" >Balance</label><span id="balance-validate"></span>
+                    <input type="text" name="balance" id="balance" placeholder="Enter Amount" />
                     <div class="button">
                         <button type="button" id="edit">Edit</button>
                         <button type="submit" id="add">Add</button>
-                        <button type="reset" id="reset">Reset</button>
+                        <button type="button" id="delete">delete</button>
                     </div>
                 </form>
             </div>
-    
-            <h1>Customer List</h1>
+
+            <div class="button">
+                <button type="button" id="hide_form">Add Customer</button>
+            </div>
             <div class="formTable">
-                <table>
+                <table class="table">
                     <thead>
                         <tr>
-                            <th>Customer Name</th>
+                            <th><Button type="button" id="clear">Clear All</Button></th>
+                            <th>ID</th>
+                            <th>Customer Fullname</th>
                             <th>Customer Contact</th>
-                            <th>Payment</th>
-                            <th>Status</th>
-                            <th>Balance</th>
                             <th>Address</th>
+                            <th>Payment</th>
+                            <th>Order</th>
+                            <th>Loan</th>
+                            <th>Balance</th>
                         </tr>
                     </thead>
-                    <tbody id="tableData">
-                        <tr>
-                            <td>,svnvs,.d</td>
-                            <td>,svnvs,.d</td>
-                            <td>,svnvs,.d</td>
-                            <td>,svnvs,.d</td>
-                            <td>, ,mz</td>
-                            <td>,., ,</td>
-                        </tr>
-
-                        <tr>
-                            <td>,svnvs,.d</td>
-                            <td>,svnvs,.d</td>
-                            <td>,svnvs,.d</td>
-                            <td>,svnvs,.d</td>
-                            <td>, ,mz</td>
-                            <td>,., ,</td>
-                        </tr>
-
-    
+                    <tbody>
                     </tbody>
                 </table>
             </div>

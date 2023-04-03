@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/css/exc.css">
+    <link rel="stylesheet" href="css/transaction.css">
+    <link rel="stylesheet" href="css/exc.css">
     <title>My Transaction</title>
 </head>
 <body>
@@ -18,11 +19,11 @@
                     <div class="text-center"><img src="/media/profile.png" width="70%" alt="profile"></div>
                     <h6 class="text-center">Customer Name</h6>
                     <div class=" py-5 bg-light">
-                        <nav class="nav flex-column">
-                            <a href="excProfile.html" class="nav-item nav-link"><i class="bi bi-person-circle"></i> Profile</a>
-                            <a href="excOrder.html" class="nav-item nav-link"><i class="bi bi-bag-check"></i> Order</a>
-                            <a href="excLoan.html" class="nav-item nav-link"><i class="bi bi-wallet2"></i> Loan</a>
-                            <a href="excTransaction.html" class="nav-item nav-link"><i class="bi bi-arrow-left-right"></i> Transaction</a>
+                        <nav class="nav">
+                            <a href="excDashboard.html" class=""><i class="bi bi-grid"></i></i> <span>Dashboard</span></a>
+                            <a href="excLoan.html" class=""><i class="bi bi-wallet2"></i> <span>Loan</span></a>
+                            <a href="excTransaction.html" class="active"><i class="bi bi-arrow-left-right"></i> <span>Transaction</span></a>
+                            <a href="excProfile.html" class=""><i class="bi bi-person-circle"></i> <span>Profile</span></a>
                         </nav>
                     </div>
                 </div>
@@ -32,36 +33,115 @@
                     <div class="p-2">
                         <h5 class="text-white">My Transaction</h5>
                     </div>
-                    <div class="py-2 col-2 d-flex justify-content-between">
+                    <div class="py-2 d-flex justify-content-between">
                         <div>
                             <a href="#" class="text-white"><i class="bi bi-bell"></i></a>
                             <a href="#" class="text-white"><i class="bi bi-chat-left-dots"></i></a>
                         </div>
-                        <a href="#" class="nav-item nav-link text-white">Logout</a>
                     </div>
                 </div>
-                <div class="col-12 mt-3 ">
-                    <div class="row">
-                        <nav class="nav mx-4 flex-column shadow shadow-primary col-3 p-0 py-2 rounded bg-light">
-                            <a href="#" class="nav-item nav-link"><i class="bi bi-bag-check"></i>Pending</a>
-                            <a href="#" class="nav-item nav-link"><i class="bi bi-bag-check"></i>Completed</a>
-                            <a href="#" class="nav-item nav-link"><i class="bi bi-bag-check"></i>Cancelled</a>
-                        </nav>
-                        <div class="col ms-auto mx-4 p-0 rounded bg-light">
-                            <h6 class="p-2">Pending</h6>
+                <div class="col-12 p-0 mt-3">
+                    <div class="col-11 row mx-4 rounded bg-light">
+                        <div class="col-3">
+                            <nav class="nav mt-4 mb-4 col-12 ">
+                                <a href="#" class="active" id="btnPending" onclick="pending()"><i class="bi bi-bag-plus"></i> Pending Order</a>
+                                <a href="#" class="" id="btnCompleted" onclick="completed()"><i class="bi bi-bag-check"></i> Completed Order</a>
+                                <a href="#" class="" id="btnCancelled" onclick="cancelled()"><i class="bi bi-bag-x"></i> Cancelled Order</a>
+                            </nav>
+                        </div>
+                        <section id="pending" class=" col-9 p-2 mb-4">
+                            <h6>Pending</h6>
+                            <p>To Receieved : </p>
+                            <div class="row">
+                                <div class="card col-5 mx-4">
+                                    <div class="row">
+                                        <div class="col-6 mt-3"><img src="/media/supplies.jpg" width="100%" alt="supplies"></div>
+                                        <div class="col-6">
+                                            <h6 class="card-title">School Supplies</h6>
+                                            <p>x2</p>
+                                            <p>Price: <span>100.00</span></p>
+                                            <div>
+                                                <h6>Total: 200.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card col-5">
+                                    <div class="row">
+                                        <div class="col-6 mt-3"><img src="/media/supplies.jpg" width="100%" alt="supplies"></div>
+                                        <div class="col-6">
+                                            <h6 class="card-title">School Supplies</h6>
+                                            <p>x2</p>
+                                            <p>Price: <span>100.00</span></p>
+                                            <div>
+                                                <h6>Total: 200.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row mt-4">
+                                <div class="card col-5 mx-4">
+                                    <div class="row">
+                                        <div class="col-6 mt-3"><img src="/media/supplies.jpg" width="100%" alt="supplies"></div>
+                                        <div class="col-6">
+                                            <h6 class="card-title">School Supplies</h6>
+                                            <p>x2</p>
+                                            <p>Price: <span>100.00</span></p>
+                                            <div>
+                                                <h6>Total: 200.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card col-5">
+                                    <div class="row">
+                                        <div class="col-6 mt-3"><img src="/media/supplies.jpg" width="100%" alt="supplies"></div>
+                                        <div class="col-6">
+                                            <h6 class="card-title">School Supplies</h6>
+                                            <p>x2</p>
+                                            <p>Price: <span>100.00</span></p>
+                                            <div>
+                                                <h6>Total: 200.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+                        <section id="completed" class=" col-9 completed p-2 ms-auto">
+                            <h6>Completed</h6>
+                            <p>For month of : </p>
                             <div class="card">
-                                <div class="card-body">
-                                    <img src="/media/supplies.jpg" width="20%" alt="supplies">
-                                    <h5 class="card-title">School Supplies</h5>
+                                <div class="row">
+                                    <div class="col-6"><img src="/media/supplies.jpg" width="80%" alt="supplies"></div>
+                                    <div class="col-6">
+                                        <h6 class="card-title">School Supplies</h6>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </section>
+                        <section id="cancelled" class=" col-9 cancelled p-2 ms-auto">
+                            <h6>Canceled</h6>
+                            <p>For month of : </p>
+                            <div class="card">
+                                <div class="row">
+                                    <div class="col-6"><img src="/media/supplies.jpg" width="80%" alt="supplies"></div>
+                                    <div class="col-6">
+                                        <h6 class="card-title">School Supplies</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>
             
         </div>
     </div>
+    <script src="js/transaction.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>

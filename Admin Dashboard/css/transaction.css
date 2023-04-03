@@ -53,8 +53,6 @@ body{
     font-family: poppins, sans-serif;
     font-size: 0.88rem;
     background: var(--color-background);
-    user-select: none;
-    overflow-x: hidden;
     color: var(--color-dark);
 }
 
@@ -226,69 +224,115 @@ aside .sidebar .order-count{
     border-radius: var(--border-radius-1);
 }
 
-/* ====================FORM====================== */
 
 
-/* ========================TABLE========================  */
 
 
-/* Style the form container */
-.inputForm {
+
+
+  /* Main styles */
+
+  main h1{
+    margin-top: 3rem;
+  }
+
+.formcontainer {
+    margin-top: 3rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin: 20px 0;
+    justify-content: center;
   }
   
   /* Style the form labels */
   label {
-    font-size: 16px;
-    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
   }
   
   /* Style the form inputs */
-  input[type="text"],
-  input[type="number"],
-  select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+  input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, input[type="date"] {
+    display: block;
+    padding: 8px;
     border: none;
-    border-radius: 5px;
-    background-color: #f2f2f2;
+    border-bottom: 2px solid gray;
+    margin-bottom: 10px;
+    width: 100%;
     font-size: 16px;
   }
   
-  /* Style the form buttons */
-  .button button {
-    margin: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+
+  input[type="submit"] {
     background-color: #4CAF50;
     color: white;
-    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
   }
   
-  span{
-    color: red;
-    margin-top: 0;
-  }
-  .button button:hover {
+
+  input[type="submit"]:hover {
     background-color: #3e8e41;
   }
   
-  /* Style the form table */
-  .formTable {
-    margin: 20px 0;
+ 
+  input:focus, select:focus {
+    outline: none;
+    border-bottom: 2px solid #4CAF50;
   }
+  
+
+  form {
+    animation: form-submission 0.5s ease-in-out;
+  }
+  
+  @keyframes form-submission {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+
+  input, select {
+    transition: border-bottom 0.3s ease-in-out;
+    box-shadow: var(--box-shadow);
+  }
+  
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    border: 2px solid var(--color-dark-variant);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    background: var(--color-dark-variant);
+  }
+  
+
+  /* ===========TABLE=============== */
+
+   /* Style the form table */
+   .table_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
   
   .table {
     width: 100%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     border-collapse: collapse;
     font-family: sans-serif;
+
   }
 
   main table tr {
@@ -348,92 +392,3 @@ aside .sidebar .order-count{
   #select-row:checked ~ .table tbody td input[type="checkbox"] {
     display: block;
   }
-  
-
-  /* Form Container */
-.inputForm {
-    margin: 20px auto;
-    width: 50%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-/* Form Title */
-.inputForm h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* Form Labels */
-.inputForm label {
-    font-size: 1.2rem;
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-/* Form Input Fields */
-.inputForm input[type="text"], 
-.inputForm select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    font-size: 1.2rem;
-}
-
-.inputForm input[type="text"]:focus, 
-.inputForm input[type="number"]:focus, 
-.inputForm select:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
-}
-
-/* Form Buttons */
-.inputForm .button {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.inputForm button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1.2rem;
-    margin-right: 10px;
-    transition: all 0.3s ease;
-}
-
-.inputForm button:hover {
-    background-color: #fff;
-    color: #333;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-}
-
-/* Form Animation */
-.inputForm input[type="text"], 
-.inputForm input[type="number"], 
-.inputForm select, 
-.inputForm button {
-    animation: fadeIn 1s ease;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
