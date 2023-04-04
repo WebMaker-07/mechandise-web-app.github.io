@@ -13,27 +13,19 @@
 
 
     <div class="container">
-
-
         <aside>
-            <div class="top">
-                <div class="logo">
-                    <img src="images/logo.gif" alt="">
-                    <h2>ADMIN</h2>
-                    
-                </div>
-                <div class="close" id="close-btn">
-                    <i class="bi bi-x"></i>
-                </div>
+        <div class="top">
+            <div class="logo">
+                <img src="images/logo.gif" alt="">
+                <h2>ADMIN</h2>
+                
             </div>
-
+            <div class="close" id="close-btn">
+                <i class="bi bi-x"></i>
+            </div>
+        </div>
 <!-- =================================SIDEBAR=============================-->
 
-                <a href="Customer.html" class="active">
-                    <i class="bi bi-person-badge"></i>
-                    <h3>Customer</h3>
-                </a>
-=======
 <div class="sidebar">
     <a href="Dashboard.html" >
         <i class="bi bi-grid"></i>
@@ -49,7 +41,7 @@
         <h3>Transaction</h3>
     </a>
 
-    <a href="#">
+    <a href="Order.html">
         <i class="bi bi-bag-dash"></i>
         <h3>Order </h3>
         <span class="order-count">123</span>
@@ -84,6 +76,7 @@
             <!-- ==============================END OF ASIDE============================= -->
 
         <main>
+            
             <h1>Customer</h1>
             <div class="inputForm">
                 <form action="#" method="#" id="form">
@@ -145,7 +138,42 @@
                 </table>
             </div>
         </main>
-
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div class="theme-toggler">
+                    <i class="bi bi-brightness-high active"></i>
+                    <i class="bi bi-cloud-sun"></i>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b id="pusername"></b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="images/avatar.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- =========END OF TOP ======== -->
+            <div class="recent-updates">
+                        <h2>Recent Updates</h2>
+                        <div class="updates">
+                            
+                            <div class="update">
+                            <div class="profile-photo">
+                                <img src="images/avatar.png" alt="">
+                            </div>
+                            <div class="message">
+                                <p></p>
+                                <small class="text-muted"></small>
+                            </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
 
 
     </div>

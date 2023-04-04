@@ -4,7 +4,7 @@ const customerData = JSON.parse(localStorage.getItem("customerData")) || [];
 
 // alert(data);
 
-let customerName = "Fanner Lhastly";
+
 
 if (customerData) {
   // const customer = customerData.filter(customer => customer.name === "Proffer" ); 
@@ -28,12 +28,10 @@ if (customerData) {
       </td>
     `;
     document.getElementById('customer-data').appendChild(row);
-<<<<<<< HEAD
     }
     else{
       document.write("No Data");
     }
-=======
->>>>>>> ef83e24e31c9bc4d041f86e45231d70f988dcfec
+
   });
 }
