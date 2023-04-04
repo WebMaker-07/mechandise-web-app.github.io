@@ -53,6 +53,8 @@ body{
     font-family: poppins, sans-serif;
     font-size: 0.88rem;
     background: var(--color-background);
+    user-select: none;
+    overflow-x: hidden;
     color: var(--color-dark);
 }
 
@@ -225,25 +227,26 @@ aside .sidebar .order-count{
 }
 
 
-/* Set main styles */
+/* Two-column layout */
 main {
+    
     display: flex;
     flex-direction: row;
-    justify-content: center;
     /* align-items: center; */
-    /* max-width: 1200px; */
-    /* margin: 0 auto; */
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
   }
   
-  /* Set form styles */
   .form {
-    margin-top: 120px;
+    margin-top: 100px;
     flex-basis: 50%;
     margin-right: 20px;
   }
   
-  /* Form element styles */
+  /* Form styles */
   .form form {
     display: flex;
     flex-direction: column;
@@ -257,8 +260,7 @@ main {
   }
   
   .form input[type="text"],
-  .form input[type="email"],
-  .form input[type="tel"] {
+  .form input[type="number"] {
     width: 100%;
     padding: 10px;
     border: none;
@@ -282,15 +284,9 @@ main {
     background-color: #3E8E41;
   }
   
-  /* Set table styles */
-  .table {
-    flex-basis: 50%;
-  }
-  
-  h1{
+  h2{
     font-size: 2em;
-    position:absolute;
-    left: 240px;
+    margin-top: 20px;
   }
   .form table {
     width: 100%;
@@ -314,31 +310,29 @@ main {
     background-color: #f5f5f5;
   }
   
-  /* Set animation transition */
+  /* Animation transition */
   .form input[type="text"],
-  .form input[type="email"],
-  .form input[type="tel"],
+  .form input[type="number"],
   .form input[type="submit"],
   .form table {
     transition: all 0.3s ease-in-out;
   }
   
-  /* Set color media query */
+  /* Color media query */
   @media screen and (max-width: 767px) {
     .form {
       flex-basis: 100%;
       margin-right: 0;
     }
-  
+    
     .form input[type="text"],
-    .form input[type="email"],
-    .form input[type="tel"],
+    .form input[type="number"],
     .form input[type="submit"],
     .form table {
       background-color: #f2f2f2;
       color: #333;
     }
-  
+    
     .form input[type="submit"]:hover {
       background-color: #333;
       color: white;
