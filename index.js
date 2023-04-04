@@ -1,20 +1,17 @@
 document.querySelector('form').addEventListener('submit', function(event) {
-
   event.preventDefault(); 
-  const formData = JSON.parse(localStorage.getItem('formData')); 
-  const usernameOrEmail = document.getElementById('uname').value;
-  const password = document.getElementById('pwd').value;
+  const formData = JSON.parse(localStorage.getItem('customerSignInData')); 
+  const usernameOrEmail = document.querySelector('input[type="text"][placeholder="Your Username"]').value;
+  const password = document.querySelector('input[type="text"][placeholder="Your Password"]').value;
 
   // Check if username is all caps
   if (usernameOrEmail.indexOf('@') === -1) {
     if (usernameOrEmail.toUpperCase() !== usernameOrEmail) {
       alert('Please enter your username in all capital letters.');
       return;
-
     }
   }
 
-  // Check if username/email and password match
   let matchedData = null;
   for (const data of formData) {
     if ((data.email === usernameOrEmail || data.username === usernameOrEmail) && data.password === password) {
@@ -23,7 +20,6 @@ document.querySelector('form').addEventListener('submit', function(event) {
     }
   }
 
-  // Handle error
   if (!matchedData) {
     alert('Invalid username/email or password');
     const submitButton = document.querySelector('button[type="submit"]');
@@ -34,13 +30,12 @@ document.querySelector('form').addEventListener('submit', function(event) {
       if (countdown === -1) {
         clearInterval(countdownInterval);
         submitButton.disabled = false;
-        submitButton.textContent = 'Submit';
+        submitButton.textContent = 'Login';
       }
     }, 1000);
     return;
   }
 
-  // Successful login
   localStorage.setItem('signinData', JSON.stringify(matchedData));
-  window.location.href = 'dashboard.html'; 
+  window.location.href = 'proffer/home.html'; 
 });

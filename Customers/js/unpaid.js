@@ -4,7 +4,7 @@ const customerData = JSON.parse(localStorage.getItem("customerData")) || [];
 
 // alert(data);
 
-
+let customerName = "Fanner Lhastly";
 
 if (customerData) {
   // const customer = customerData.filter(customer => customer.name === "Proffer" ); 
@@ -28,6 +28,7 @@ if (customerData) {
       </td>
     `;
     document.getElementById('customer-data').appendChild(row);
+
     }
     else{
       document.write("No Data");

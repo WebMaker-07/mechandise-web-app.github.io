@@ -36,7 +36,7 @@ span {
 .row .tagline p{
     padding-right: 100px;
 }
-.row .tagline button{
+.row .tagline a{
    background: rgba(114, 255, 171, 0.5);
    font-size: 20px;
    color:rgb(10, 10, 10);
