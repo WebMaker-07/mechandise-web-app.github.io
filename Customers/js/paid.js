@@ -13,7 +13,7 @@ if (customerData) {
   customerData.forEach(customer => {
     // alert(customer.name)
   
-    if(customer.name === "Proffer" && customer.loan === "Unpaid"){
+    if(customer.name === "Proffer" && customer.loan === "Paid"){
       const row = document.createElement('tr');
       row.innerHTML = `
 
@@ -32,5 +32,6 @@ if (customerData) {
     else{
       document.write("No Data");
     }
+
   });
 }

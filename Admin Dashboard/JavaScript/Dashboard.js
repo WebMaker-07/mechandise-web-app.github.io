@@ -61,20 +61,7 @@ if (customerData) {
     tr.appendChild(paymentTd);
     
     const orderTd = document.createElement('td');
-    orderTd.textContent = customer.order;
-    switch (customer.order) {
-      case 'Complete':
-        orderTd.classList.add('order-complete');
-        break;
-      case 'Pending':
-        orderTd.classList.add('order-pending');
-        break;
-      case 'Cancelled':
-        orderTd.classList.add('order-cancel');
-        break;
-      default:
-        break;
-    }
+   
     tr.appendChild(orderTd);
     
     const balanceTd = document.createElement('td');

@@ -1,4 +1,5 @@
 document.querySelector('form').addEventListener('submit', function(event) {
+
   event.preventDefault(); 
   const formData = JSON.parse(localStorage.getItem('formData')); 
   const usernameOrEmail = document.getElementById('uname').value;
@@ -9,6 +10,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     if (usernameOrEmail.toUpperCase() !== usernameOrEmail) {
       alert('Please enter your username in all capital letters.');
       return;
+
     }
   }
 
